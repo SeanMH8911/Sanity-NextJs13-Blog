@@ -94,7 +94,7 @@ interface Title {
     comment: string;
 }
 
-export interface Comment {
+interface Comment {
 _createdAt:string
 _id:string
 _rev:string

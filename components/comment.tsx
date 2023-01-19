@@ -1,6 +1,7 @@
 'use client'
 import {useForm, SubmitHandler} from 'react-hook-form'
 import { useState } from 'react'
+import Header from './Header'
 
 
 function Comment({post}: Post) {

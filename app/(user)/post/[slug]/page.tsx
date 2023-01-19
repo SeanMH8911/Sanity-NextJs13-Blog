@@ -5,6 +5,7 @@ import { client } from "../../../../lib/sanity.client"
 import urlFor from "../../../../lib/urlFor"
 import { RichTextComponents } from "../../../../components/RichTextComponents"
 import Comment from "../../../../components/comment"
+import Header from "../../../../components/Header"
 
 type Props = {
     params: {
@@ -46,7 +47,6 @@ const query = groq`
     `   
     const post: Post = await client.fetch(query, {slug}) 
 
-console.log(post);
 
   return (
     <article className="px-10 pb-28">
