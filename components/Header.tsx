@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import AuthOptions from "./AuthOptions"
 
 function Header() {
   return (
@@ -10,9 +11,10 @@ function Header() {
           </Link>
         </div>
         <div>
-          <Link href="">
+          {/* <Link href="">
             Login
-          </Link>
+          </Link> */}
+          <AuthOptions />
         </div>
     </header>
   )

@@ -23,7 +23,7 @@ export const myTheme = buildLegacyTheme({
 
 
     // Brand
-    // Deafult button
+    // Default button
     // State
     // Navbar
 })
