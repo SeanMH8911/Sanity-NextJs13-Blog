@@ -5,6 +5,7 @@ import PreviewSuspense from '../../components/PreviewSuspense'
 import PreviewBlogList from "../../components/PreviewBlogList"
 import BlogList from "../../components/BlogList"
 import Banner from "../../components/Banner"
+import { unstable_getServerSession } from "next-auth/next"
 import Header from "../../components/Header"
 
 const query = groq`
@@ -18,6 +19,8 @@ export const revalidate = 60 //re-builds page every 60 in background
 
 
 async function HomePage() {
+  const session = await unstable_getServerSession()
+  
   if (previewData()) {
     return (
       <PreviewSuspense fallback={(
@@ -36,6 +39,7 @@ async function HomePage() {
   
   return (
       <div>
+      <Header session={session}/>
       <Banner />
       <BlogList posts={posts}/>
       </div>

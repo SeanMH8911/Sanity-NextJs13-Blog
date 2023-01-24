@@ -1,8 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
 import AuthOptions from "./AuthOptions"
+import { unstable_getServerSession } from "next-auth"
 
-function Header() {
+type Props = {
+session: Awaited<ReturnType<typeof unstable_getServerSession>>
+}
+
+function Header({session}: Props) {
+  
   return (
     <header className="flex justify-between px-10 py-5 text-myGrey font-bold">
         <div className=" hover:underline">
@@ -11,10 +17,7 @@ function Header() {
           </Link>
         </div>
         <div>
-          {/* <Link href="">
-            Login
-          </Link> */}
-          <AuthOptions />
+          <AuthOptions session={session}/>
         </div>
     </header>
   )

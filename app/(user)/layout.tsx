@@ -1,17 +1,19 @@
 import Header from '../../components/Header'
 import Providers from '../../components/Providers'
 import '../../styles/globals.css'
-export default function RootLayout({
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html>
       <head />
       <body>
-      <Providers>
-        <Header />
+      <Providers >
         {children}
       </Providers>
       </body>

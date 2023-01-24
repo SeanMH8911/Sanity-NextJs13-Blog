@@ -1,23 +1,22 @@
 'use client'
+import { signIn, signOut } from "next-auth/react"
 
-import { useSession, signIn, signOut } from "next-auth/react"
-
-function AuthOptions() {
-  const { data: session } = useSession()
-  console.log(session);
-  
+function AuthOptions({session}: any) {
   if (session) {
     return (
       <>
-        Signed in as {} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+       <div className="flex space-x-2">
+         Hi, {session.user!.name} <br />
+        <button className="text-myYellow" onClick={() => signOut()}>Sign out</button>
+       </div>
       </>
     )
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <div >
+        <button className="text-myYellow" onClick={() => signIn()}>Sign in</button>
+      </div>
     </>
   )
 }

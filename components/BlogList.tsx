@@ -9,7 +9,6 @@ type Props = {
 }
 
 function BlogList({posts}: Props) {
-  console.log(posts);
   
   return (
     <div className="max-w-6xl mx-auto">
